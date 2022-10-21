@@ -4,10 +4,10 @@
   "license": "MIT",
   "scripts": {
     "start": "nx run-many --target=serve --parallel=true --projects=api,junction",
-    "build": "nx build",
+    "build": "nx build junction",
     "test": "nx test",
     "build:api": "npm --prefix api run build",
-    "build:junction": "npm --prefix junction run build"
+    "build:junction": "npm --prefix apps/junction run build"
   },
   "private": true,
   "dependencies": {
