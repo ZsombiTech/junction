@@ -3,7 +3,7 @@ import { Message } from '@junction/api-interfaces';
 
 const app = express();
 
-const greeting: Message = { message: 'Welcome to api!' };
+const greeting: Message = { message: 'Welcome to Zsombi app!' };
 
 app.get('/api', (req, res) => {
   res.send(greeting);
