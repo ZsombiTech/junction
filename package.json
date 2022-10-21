@@ -5,7 +5,9 @@
   "scripts": {
     "start": "nx run-many --target=serve --parallel=true --projects=api,junction",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "build:api": "npm --prefix api run build",
+    "build:junction": "npm --prefix junction run build"
   },
   "private": true,
   "dependencies": {
