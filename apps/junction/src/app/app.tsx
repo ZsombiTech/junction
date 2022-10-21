@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Message } from '@junction/api-interfaces';
+import axios from 'axios';
 
 export const App = () => {
   const [m, setMessage] = useState<Message>({ message: '' });
 
   useEffect(() => {
-    fetch('/api')
-      .then((r) => r.json())
-      .then(setMessage);
+    axios
+      .get('https://catfact.ninja/fact')
+      .then((data) => console.log(data.data));
   }, []);
 
   return (
