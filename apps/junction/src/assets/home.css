@@ -1,0 +1,25 @@
+.fill-page {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.line {
+    width: 20px;
+    height: 2px;
+    border-radius: 99px;
+    background-color: #E5E5E5;
+    position: absolute;
+}
+
+.line.rotate {
+    transform: rotate(90deg);
+}
+
+.cross {
+    margin-right: 14px;
+}

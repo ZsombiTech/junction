@@ -1,0 +1,20 @@
+.profilepic {
+    width: fit-content;
+    height: 26px;
+    display: inline-block;
+    margin-left: -10px;
+}
+
+.profilepic img {
+    width: 26px;
+    height: 26px;
+    border-radius: 99px;
+    object-fit: cover;
+}
+
+.pfp-wrapper {
+    margin-left: 26px;
+    width: fit-content;
+    height: 26px;
+    display: inline-block;
+}

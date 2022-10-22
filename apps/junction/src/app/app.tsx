@@ -1,28 +1,66 @@
-import React, { useEffect, useState } from 'react';
-import { Message } from '@junction/api-interfaces';
+import React, { useEffect } from 'react';
+import { User } from '@junction/api-interfaces';
 import axios from 'axios';
+import './app.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Navbar from '../components/Navbar';
+import Login from '../pages/Login';
+import EditGroup from '../pages/EditGroup';
+import Trip from '../pages/Trip';
+import Home from '../pages/Home';
+import Friends from '../pages/Friends';
+import EditGroup from '../pages/EditGroup';
+import AddGroup from '../pages/AddGroup';
+import EditTrip from '../pages/EditTrip';
+import AddTrip from '../pages/AddTrip';
+import TransferBalance from '../pages/TransferBalance';
 
 export const App = () => {
-  const [m, setMessage] = useState<Message>({ message: '' });
-
   useEffect(() => {
-    axios
-      .get('https://catfact.ninja/fact')
-      .then((data) => console.log(data.data));
+    axios.get<User[]>('/api/users').then((data) => console.log(data.data));
   }, []);
 
   return (
-    <>
-      <div style={{ textAlign: 'center' }}>
-        <h1>Welcome to HUNMARGYAR SZITYYAK!</h1>
-        <img
-          width="450"
-          src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-          alt="Nx - Smart, Fast and Extensible Build System"
-        />
+    <Router>
+      <div className="background">
+        <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/friends">
+            <Friends />
+            <Navbar />
+          </Route>
+          <Route path="/editgroup">
+            <EditGroup />
+            <Navbar />
+          </Route>
+          <Route path="/addgroup">
+            <AddGroup />
+            <Navbar />
+          </Route>
+          <Route path="/edittrip">
+            <EditTrip />
+            <Navbar />
+          </Route>
+          <Route path="/addtrip">
+            <AddTrip />
+            <Navbar />
+          </Route>
+          <Route path="/transferbalance">
+            <TransferBalance />
+            <Navbar />
+          </Route>
+          <Route path="/trip">
+            <Trip />
+          </Route>
+          <Route path="/">
+            <Home />
+            <Navbar />
+          </Route>
+        </Switch>
       </div>
-      <div>{m.message}</div>
-    </>
+    </Router>
   );
 };
 
