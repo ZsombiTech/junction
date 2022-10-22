@@ -24,6 +24,7 @@ async function main() {
   console.log('Connected to MongoDB');
 }
 
+app.use(express.json());
 app.use('/api', GroupRoutes);
 app.use('/api', TripRoutes);
 app.use('/api', UserRoutes);
