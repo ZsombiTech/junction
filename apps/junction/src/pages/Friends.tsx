@@ -31,6 +31,9 @@ export const Friends = () => {
         spent={1234}
         pooled={1234}
       />
+      <div className="onerow2">
+        <h3 className="tripsText">Transaction History</h3>
+      </div>
     </div>
   );
 };

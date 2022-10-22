@@ -35,7 +35,7 @@
   margin-top: 1rem;
   width: 90%;
   height: 2rem;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: white;
 }
 
@@ -50,8 +50,29 @@
 
 .inputBox::placeholder {
   font-size: 1.5rem;
+  color: #e3e5e8;
+  font-weight: 100;
+  font-size: 1.1rem;
 }
 
 input:focus {
   outline: none;
+}
+
+.onerow2 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tripsText {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  font-size: 2rem;
+  font-weight: 300;
 }

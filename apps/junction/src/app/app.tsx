@@ -18,8 +18,8 @@ export const App = () => {
     <Router>
       <div className="background">
         <Switch>
-          <Route path="/editgroup">
-            <EditGroup />
+          <Route path="/friends">
+            <Friends />
           </Route>
           <Route path="/">
             <Home />
