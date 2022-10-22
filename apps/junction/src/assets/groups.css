@@ -28,3 +28,9 @@
   display: inline-block;
   margin-left: 6px;
 }
+
+.groups-wrapper {
+  position: absolute;
+  top: 120px;
+  width: 100%;
+}
