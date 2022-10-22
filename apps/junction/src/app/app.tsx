@@ -6,9 +6,7 @@ export const App = () => {
   const [m, setMessage] = useState<Message>({ message: '' });
 
   useEffect(() => {
-    axios
-      .get('https://catfact.ninja/fact')
-      .then((data) => console.log(data.data));
+    axios.get('/api').then((data) => console.log(data.data));
   }, []);
 
   return (
