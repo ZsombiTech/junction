@@ -8,8 +8,14 @@ export const Home = () => {
  
   return (
     <div className='fill-page bg-blue'>
-        <h1 className='margin-1 white'>Groups</h1>
-        <GroupComponent groupName="Zsiványok" memberText="Dénes Balogh, Dániel Gergely and 2 more..." />
+      <div className='home-header'>
+        <h1 className='white'>Groups</h1>
+        <div className='cross'>
+          <div className='line'></div>
+          <div className='line rotate'></div>
+        </div>
+      </div>
+      <GroupComponent groupName="Zsiványok" memberText="Dénes Balogh, Dániel Gergely and 2 more..." />
     </div>
   );
 };
