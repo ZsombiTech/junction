@@ -1,0 +1,18 @@
+.navbarContainer {
+  bottom: 0;
+  overflow: hidden;
+  position: fixed;
+  background-color: #ffffff;
+  width: 100%;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 12px 12px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navItem {
+  cursor: pointer;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}

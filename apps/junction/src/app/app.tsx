@@ -3,6 +3,9 @@ import { User } from '@junction/api-interfaces';
 import axios from 'axios';
 import './app.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Friends from '../pages/Friends';
+import Navbar from '../components/Navbar';
+import EditGroup from '../pages/EditGroup';
 
 export const App = () => {
   useEffect(() => {
@@ -11,15 +14,16 @@ export const App = () => {
 
   return (
     <Router>
-      <div>
+      <div className="background">
         <Switch>
-          <Route path="/users">
-            <h1>Users</h1>
+          <Route path="/editgroup">
+            <EditGroup />
           </Route>
           <Route path="/">
             <h1>Home</h1>
           </Route>
         </Switch>
+        <Navbar />
       </div>
     </Router>
   );
