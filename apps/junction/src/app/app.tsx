@@ -17,7 +17,7 @@ import Stats from '../pages/Stats';
 
 export const App = () => {
   useEffect(() => {
-    axios.get<User[]>('http://deducks2.tk:4201/api/users').then((data) => console.log(data.data));
+    axios.get<User[]>('api/users').then((data) => console.log(data.data));
   }, []);
 
   return (
