@@ -11,7 +11,7 @@ export default class UserController {
   };
   static getUser = async (req, res, next) => {
     try {
-      const user = await UserModel.find({ _id: req.params.id });
+      const user = await UserModel.find({ id: req.params.id });
       res.json(user);
     } catch (error) {
       next(error);

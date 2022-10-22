@@ -13,10 +13,11 @@ import AddGroup from '../pages/AddGroup';
 import EditTrip from '../pages/EditTrip';
 import AddTrip from '../pages/AddTrip';
 import TransferBalance from '../pages/TransferBalance';
+import Stats from '../pages/Stats';
 
 export const App = () => {
   useEffect(() => {
-    axios.get<User[]>('/api/users').then((data) => console.log(data.data));
+    axios.get<User[]>('api/users').then((data) => console.log(data.data));
   }, []);
 
   return (
@@ -52,6 +53,10 @@ export const App = () => {
           </Route>
           <Route path="/trip">
             <Trip />
+          </Route>
+          <Route path="/stats">
+            <Stats />
+            <Navbar />
           </Route>
           <Route path="/">
             <Home />
