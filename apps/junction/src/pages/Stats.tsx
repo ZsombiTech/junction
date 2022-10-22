@@ -4,6 +4,7 @@ import '../assets/stats.css';
 
 import backbutton from '../assets/images/BackButton.svg';
 
+import StatMember from '../components/StatMember';
 
 export const Stats = () => {
  
@@ -14,11 +15,11 @@ export const Stats = () => {
         <p className="headerText">Spending Statistics</p>
       </div>
       <div className='stats-wrapper'>
-        <div className='stat'>
-            <p className='member-name'>Dániel Gergely</p>
-            <p className='money plus'>+ 100 EUR</p>
-            <p className='money minus'>- 100 EUR</p>
-        </div>
+        <StatMember
+            name="Dániel Gergely"
+            pozVal="420.05"
+            negVal="49.95"
+        />
       </div>
     </div>
   );

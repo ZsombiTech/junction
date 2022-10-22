@@ -1,6 +1,7 @@
 import '../assets/main.css';
 import '../assets/home.css';
 
+import { Link } from 'react-router-dom';
 
 import GroupComponent from '../components/GroupComponent';
 
@@ -10,10 +11,12 @@ export const Home = () => {
     <div className='fill-page bg-blue'>
       <div className='home-header'>
         <h1 className='white'>Groups</h1>
-        <div className='cross'>
-          <div className='line'></div>
-          <div className='line rotate'></div>
-        </div>
+        <Link to="/addgroup">
+          <div className='cross'>
+            <div className='line'></div>
+            <div className='line rotate'></div>
+          </div>
+        </Link>
       </div>
       <div className='groups-wrapper'>
         <GroupComponent groupName="Zsiványok" memberText="Dénes Balogh, Dániel Gergely and 2 more..." />
