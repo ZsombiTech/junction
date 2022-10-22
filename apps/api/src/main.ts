@@ -3,6 +3,7 @@ import { Message } from '@junction/api-interfaces';
 import GroupRoutes from './app/routes/group';
 import TripRoutes from './app/routes/trips';
 import UserRoutes from './app/routes/user';
+import * as cors from 'cors';
 import 'dotenv/config';
 import mongoose from 'mongoose';
 
@@ -23,7 +24,7 @@ async function main() {
   );
   console.log('Connected to MongoDB');
 }
-
+app.use(cors());
 app.use(express.json());
 app.use('/api', GroupRoutes);
 app.use('/api', TripRoutes);
