@@ -25,10 +25,6 @@ const User_schema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  location: {
-    type: String,
-    default: 'Unknown',
-  },
   bankAccount: {
     type: String,
     default: 'Unknown',
@@ -36,6 +32,10 @@ const User_schema = new mongoose.Schema({
   currentMoney: {
     type: Number,
     default: 0,
+  },
+  transasctions: {
+    type: Array,
+    default: [],
   },
   createdAt: {
     type: Date,

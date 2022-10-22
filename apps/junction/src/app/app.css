@@ -1,0 +1,36 @@
+.background {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 105vw;
+  background-color: #37517e;
+  filter: blur(12px);
+  margin-left: -1rem;
+  -webkit-filter: blur(12px);
+}
+
+.greenRectangle {
+  background-color: #44ee70;
+  width: 10rem;
+  height: 10rem;
+  transform: rotate(11.73deg);
+  border-radius: 20px;
+  margin-top: 2rem;
+  margin-left: -0.2.5rem;
+}
+
+.alignright {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.yellowRectangle {
+  background-color: #ffb619;
+  width: 10rem;
+  height: 10rem;
+  transform: rotate(-13.62deg);
+  border-radius: 20px;
+  margin-top: -7rem;
+  margin-left: -0.2.5rem;
+}

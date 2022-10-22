@@ -21,6 +21,18 @@ const Trip_schema = new mongoose.Schema({
     type: Date,
     required: true,
   },
+  transactions: {
+    type: Array,
+    default: [],
+  },
+  balance: {
+    type: Number,
+    default: 0,
+  },
+  accountnumber: {
+    type: String,
+    default: '',
+  },
   createdAt: {
     type: Date,
     default: Date.now,
