@@ -3,7 +3,6 @@ import { User } from '@junction/api-interfaces';
 import axios from 'axios';
 import './app.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Friends from '../pages/Friends';
 import Navbar from '../components/Navbar';
 import EditGroup from '../pages/EditGroup';
 
@@ -18,8 +17,8 @@ export const App = () => {
     <Router>
       <div className="background">
         <Switch>
-          <Route path="/friends">
-            <Friends />
+          <Route path="/editgroup">
+            <EditGroup />
           </Route>
           <Route path="/">
             <Home />
