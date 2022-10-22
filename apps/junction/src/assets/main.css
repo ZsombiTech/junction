@@ -22,7 +22,7 @@ html {
 
 .home-header {
     position: relative;
-    top: 0;
+    top: 32px;
     left: 0;
     right: 0;
     height: 100px;

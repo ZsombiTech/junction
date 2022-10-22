@@ -15,7 +15,9 @@ export const Home = () => {
           <div className='line rotate'></div>
         </div>
       </div>
-      <GroupComponent groupName="Zsiványok" memberText="Dénes Balogh, Dániel Gergely and 2 more..." />
+      <div className='groups-wrapper'>
+        <GroupComponent groupName="Zsiványok" memberText="Dénes Balogh, Dániel Gergely and 2 more..." />
+      </div>
     </div>
   );
 };
