@@ -1,0 +1,28 @@
+.stat {
+    display: flex;
+    background-color: white;
+    margin: 5px 15px;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.stat .member-name {
+    flex: 5;
+}
+
+.stat .money {
+    flex: 3;
+    margin: 0 0px;
+}
+
+.money.plus {
+    color: #28BE49;
+}
+
+.money.minus {
+    color: #CF1717;
+}
+
+.header.trip {
+    margin-bottom: 30px;
+}
