@@ -1,6 +1,7 @@
 import React from 'react';
 import '../assets/style/trimcomponent.css';
 import rightarrow from '../assets/images/RightArrow.svg';
+import { Link } from 'react-router-dom';
 
 export interface TripComponentProps {
   name: string;
@@ -27,7 +28,9 @@ export const TripComponent = ({
           <p className="trimcomponentPrice">{pooled} EUR pooled</p>
         </div>
       </div>
-      <img src={rightarrow} alt="right" className="rightArrow" />
+      <Link to="/edittrip">
+        <img src={rightarrow} alt="right" className="rightArrow" />
+      </Link>
     </div>
   );
 };

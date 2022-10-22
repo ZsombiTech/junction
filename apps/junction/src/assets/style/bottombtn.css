@@ -1,0 +1,17 @@
+.bluebtn {
+  background: rgba(82, 130, 224, 0.5);
+  border-radius: 12px;
+  color: white;
+  width: 85%;
+  border: 0;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.btncontainer {
+  bottom: 100px;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
