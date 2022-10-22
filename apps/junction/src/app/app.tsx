@@ -5,7 +5,6 @@ import './app.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Login from '../pages/Login';
-import EditGroup from '../pages/EditGroup';
 import Trip from '../pages/Trip';
 import Home from '../pages/Home';
 import Friends from '../pages/Friends';
