@@ -5,14 +5,12 @@ import axios from 'axios';
 export const App = () => {
   const [m, setMessage] = useState<Message>({ message: '' });
 
-  useEffect(() => {
-    axios.get('/api').then((data) => console.log(data.data));
-  }, []);
-
   return (
     <>
       <div style={{ textAlign: 'center' }}>
-        <h1>Welcome to HUNMARGYAR SZITYYAK!</h1>
+        <h1 className="text-center text-3xl">
+          Welcome to HUNMARGYAR SZITYYAK!
+        </h1>
         <img
           width="450"
           src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"

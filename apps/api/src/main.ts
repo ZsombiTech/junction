@@ -3,6 +3,7 @@ import { Message } from '@junction/api-interfaces';
 import GroupRoutes from './app/routes/group';
 import TripRoutes from './app/routes/trips';
 import UserRoutes from './app/routes/user';
+import SpendingRoutes from './app/routes/spending';
 import 'dotenv/config';
 import mongoose from 'mongoose';
 
@@ -24,14 +25,14 @@ async function main() {
   console.log('Connected to MongoDB');
 }
 
-app.use('/api', GroupRoutes);
-app.use('/api', TripRoutes);
-app.use('/api', UserRoutes);
+app.use(express.json());
 app.get('/api', (req, res) => {
   res.send(greeting);
 });
-
-app.use(express.json());
+app.use('/api', GroupRoutes);
+app.use('/api', TripRoutes);
+app.use('/api', UserRoutes);
+app.use('/api', SpendingRoutes);
 
 const port = process.env.port || 3333;
 const server = app.listen(port, () => {
