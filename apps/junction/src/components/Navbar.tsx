@@ -45,6 +45,32 @@ export const Navbar = () => {
         )}
       </div>
       <div>
+        {accountClicked ? (
+          <Link to="/account">
+            <img
+              src={accountclicked}
+              alt="account"
+              className="navItem"
+              onClick={() => setAccountClicked(false)}
+            />
+          </Link>
+        ) : (
+          <Link to="/account">
+            <img
+              src={account}
+              alt="account"
+              className="navItem"
+              onClick={() => {
+                setAccountClicked(true);
+                setHomeClicked(false);
+                setSendClicked(false);
+                setGroupsClicked(false);
+              }}
+            />
+          </Link>
+        )}
+      </div>
+      <div>
         {sendClicked ? (
           <Link to="/send">
             <img
@@ -91,32 +117,6 @@ export const Navbar = () => {
                 setHomeClicked(false);
                 setSendClicked(false);
                 setAccountClicked(false);
-              }}
-            />
-          </Link>
-        )}
-      </div>
-      <div>
-        {accountClicked ? (
-          <Link to="/account">
-            <img
-              src={accountclicked}
-              alt="account"
-              className="navItem"
-              onClick={() => setAccountClicked(false)}
-            />
-          </Link>
-        ) : (
-          <Link to="/account">
-            <img
-              src={account}
-              alt="account"
-              className="navItem"
-              onClick={() => {
-                setAccountClicked(true);
-                setHomeClicked(false);
-                setSendClicked(false);
-                setGroupsClicked(false);
               }}
             />
           </Link>
