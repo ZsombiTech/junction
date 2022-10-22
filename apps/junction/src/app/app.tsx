@@ -1,24 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import { Message } from '@junction/api-interfaces';
+import React, { useEffect } from 'react';
+import { User } from '@junction/api-interfaces';
 import axios from 'axios';
 import './app.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 export const App = () => {
-  const [m, setMessage] = useState<Message>({ message: '' });
-
   useEffect(() => {
-    axios.get('/api').then((data) => console.log(data.data));
+    axios.get<User[]>('/api/users').then((data) => console.log(data.data));
   }, []);
 
   return (
-    <>
-      <div className="background">
-        <div className="greenRectangle"></div>
-        <div className="alignright">
-          <div className="yellowRectangle"></div>
-        </div>
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/users">
+            <h1>Users</h1>
+          </Route>
+          <Route path="/">
+            <h1>Home</h1>
+          </Route>
+        </Switch>
       </div>
-    </>
+    </Router>
   );
 };
 
