@@ -4,12 +4,15 @@ import addbutton from '../assets/images/AddButton.svg';
 import MemberComponent from '../components/MemberComponent';
 import React from 'react';
 import BottomPageButton from '../components/BottomPageButton';
+import { Link } from 'react-router-dom';
 
 export const EditGroup = () => {
   return (
     <div>
       <div className="header">
-        <img src={backbutton} alt="back" className="backButton" />
+        <Link to="/friends">
+          <img src={backbutton} alt="back" className="backButton" />
+        </Link>
         <h1 className="headerText">Edit group</h1>
       </div>
       <div>
