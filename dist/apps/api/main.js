@@ -639,6 +639,13 @@ exports["default"] = router;
 
 /***/ }),
 
+/***/ "cors":
+/***/ ((module) => {
+
+module.exports = require("cors");
+
+/***/ }),
+
 /***/ "dotenv/config":
 /***/ ((module) => {
 
@@ -726,7 +733,7 @@ const express = __webpack_require__("express");
 const group_1 = __webpack_require__("./apps/api/src/app/routes/group.ts");
 const trips_1 = __webpack_require__("./apps/api/src/app/routes/trips.ts");
 const user_1 = __webpack_require__("./apps/api/src/app/routes/user.ts");
-const cors = __webpack_require__("./node_modules/cors/lib/index.js");
+const cors = __webpack_require__("cors");
 __webpack_require__("dotenv/config");
 const mongoose_1 = __webpack_require__("mongoose");
 const app = express();
