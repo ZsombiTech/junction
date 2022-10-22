@@ -3,6 +3,8 @@ import '../assets/trip.css';
 
 import backbutton from '../assets/images/BackButton.svg';
 
+import TripTransaction from '../components/TripPageTransaction';
+
 export const Trip = () => {
   return (
     <div className="fill-page bg-blue">
@@ -32,19 +34,13 @@ export const Trip = () => {
         <div className='transactions-wrapper'>
             <h4>Transaction History</h4>
             <div className='transactions'>
-                <div className='transaction'>
-                    <div className='transaction-left'>
-                    <p className='transaction-name left'>McDonald's</p>
-                        <div className='right'>
-                            <p className='transaction-amount'>-49.95</p>
-                            <p className='transaction-currency'>EUR</p>
-                        </div>
-                    </div>
-                    <div className='transaction-right'>
-                        <p className='transaction-maker left'>Dávid Bódi</p>
-                        <p className='transaction-date right'>2022. 11. 09. - 9:17</p>
-                    </div>
-                </div>
+                <TripTransaction 
+                    name="Dániel Gergely"
+                    amount="-49.95"
+                    currency="EUR"
+                    date="2021. 10. 10. - 9:17"
+                    transactionName="McDonalds"
+                />
             </div>
         </div>    
       </div>
