@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx run-many --target=serve --parallel=true --projects=api,junction",
-    "build": "nx build junction",
+    "build": "nx build junction  && cp _redirects dist/apps/junction/",
     "buildapi": "nx build api",
     "test": "nx test",
     "build:api": "npm --prefix api run build",
