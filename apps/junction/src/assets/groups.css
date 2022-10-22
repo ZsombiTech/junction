@@ -1,0 +1,30 @@
+.group-container {
+  width: calc(100% - 30px);
+  margin: 0 15px;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.group-container h1 {
+  padding-top: 14px;
+  margin-left: 18px;
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.group-members {
+  display: inline-block;
+  height: 26px;
+  margin-bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.group-members p {
+  font-size: 13px;
+  font-weight: 400;
+  color: #8F96A3;
+  display: inline-block;
+  margin-left: 6px;
+}
