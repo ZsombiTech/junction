@@ -1,5 +1,8 @@
 import * as express from 'express';
 import { Message } from '@junction/api-interfaces';
+import GroupRoutes from './app/routes/group';
+import TripRoutes from './app/routes/trips';
+import UserRoutes from './app/routes/user';
 import 'dotenv/config';
 import mongoose from 'mongoose';
 
@@ -18,36 +21,17 @@ async function main() {
   await mongoose.connect(
     `mongodb+srv://${DB_USER}:${DB_PASS}@demo.kbudhed.mongodb.net/?retryWrites=true&w=majority`
   );
-
-  // mongoose save example
-  /*const user = new User({
-    names: ['Zsombi'],
-    emails: [''],
-    addresses: [''],
-    phones: [''],
-    credit_cards: [
-        {
-        number: '123456789',
-        name: 'Zsombi',
-        expiration: '12/12',
-        cvv: '123',
-        created_at: new Date(),
-        updated_at: new Date(),
-        },
-    ],
-    created_at: new Date(),
-    updated_at: new Date(),
-    webshops_data: [],
-    });
-
-    await user.save();*/
-
   console.log('Connected to MongoDB');
 }
 
+app.use('/api', GroupRoutes);
+app.use('/api', TripRoutes);
+app.use('/api', UserRoutes);
 app.get('/api', (req, res) => {
   res.send(greeting);
 });
+
+app.use(express.json());
 
 const port = process.env.port || 3333;
 const server = app.listen(port, () => {
