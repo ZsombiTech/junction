@@ -1,12 +1,6 @@
 import '../assets/main.css';
 import '../assets/home.css';
-<<<<<<< HEAD
 import { Link } from 'react-router-dom';
-=======
-
-import { Link } from 'react-router-dom';
-
->>>>>>> dev
 import GroupComponent from '../components/GroupComponent';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
