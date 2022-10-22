@@ -1,0 +1,67 @@
+
+> junction@0.0.0 start
+> nx run api:serve:development
+
+
+> nx run api:serve
+
+
+> junction@0.0.0 start2
+> nx run junction:serve:development --host=0.0.0.0 --port=4200
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 10.2 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (ebee6e4682594942)
+Type-checking in progress...
+Debugger listening on ws://localhost:9229/0a155423-4e5f-4bb4-9912-dd19f865af2a
+For help, see: https://nodejs.org/en/docs/inspector
+
+> nx run junction:serve:development --host=0.0.0.0 --port=4200
+
+hzsombi
+Listening at http://localhost:3333/api
+Connected to MongoDB
+No errors found.
+<i> [webpack-dev-server] [HPM] Proxy created: /api  -> http://deducks.tk:4201
+<i> [webpack-dev-server] Project is running at:
+<i> [webpack-dev-server] Loopback: http://localhost:4200/
+<i> [webpack-dev-server] On Your Network (IPv4): http://192.168.1.30:4200/
+<i> [webpack-dev-server] 404s will fallback to '/index.html'
+
+>  NX  Web Development Server is listening at http://0.0.0.0:4200/
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 2.05 MiB (2.32 MiB) = [1m[32mruntime.js[39m[22m 51 KiB [1m[32mvendor.js[39m[22m 1.76 MiB [1m[32mmain.js[39m[22m 244 KiB 5 auxiliary assets
+Entrypoint [1mpolyfills[39m[22m [1m[33m[big][39m[22m 773 KiB (937 KiB) = [1m[32mruntime.js[39m[22m 51 KiB [1m[32mpolyfills.js[39m[22m 722 KiB 2 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 437 KiB (540 KiB) = [1m[32mruntime.js[39m[22m 51 KiB [1m[32mstyles.css[39m[22m 897 bytes [1m[32mstyles.js[39m[22m 385 KiB 2 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m (main) 179 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mpolyfills.js[39m[22m (polyfills) 672 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m (runtime) 34.2 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 367 KiB (javascript) 896 bytes (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 1.7 MiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (3e6cde821f8f0247)
+No errors found.
+
+ 
+
+ >  NX   Running target "junction:serve" failed
+
+   Failed tasks:
+   
+   - junction:serve:development
+   
+   Hint: run the command with --verbose for more details.
+
+
+ 
+
+ >  NX   Running target "api:serve" failed
+
+   Failed tasks:
+   
+   - api:serve
+   
+   Hint: run the command with --verbose for more details.
+
+   See Nx Cloud run details at https://nx.app/runs/WzUmfYZWND
+
+   See Nx Cloud run details at https://nx.app/runs/WJ2UoAGPdh
+

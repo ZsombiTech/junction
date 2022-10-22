@@ -11,7 +11,7 @@ import Home from '../pages/Home';
 
 export const App = () => {
   useEffect(() => {
-    axios.get<User[]>('/api/users').then((data) => console.log(data.data));
+    axios.get<User[]>('http://deducks2.tk:4201/api/users').then((data) => console.log(data.data));
   }, []);
 
   return (
