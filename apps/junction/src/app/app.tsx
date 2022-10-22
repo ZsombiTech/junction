@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Friends from '../pages/Friends';
 import Navbar from '../components/Navbar';
 import EditGroup from '../pages/EditGroup';
+import Trip from '../pages/Trip';
 
 import Home from '../pages/Home';
 
@@ -20,6 +21,9 @@ export const App = () => {
         <Switch>
           <Route path="/editgroup">
             <EditGroup />
+          </Route>
+          <Route path="/trip">
+            <Trip />
           </Route>
           <Route path="/">
             <Home />
