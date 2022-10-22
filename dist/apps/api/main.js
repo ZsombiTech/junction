@@ -14,6 +14,19 @@ class GroupController {
 }
 exports["default"] = GroupController;
 _a = GroupController;
+GroupController.getGroupsByUserId = (req, res, next) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const groups = yield group_1.default.find({
+            members: {
+                $elemMatch: { id: req.params.id },
+            },
+        });
+        res.json(groups);
+    }
+    catch (error) {
+        next(error);
+    }
+});
 GroupController.getGroups = (req, res, next) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
     try {
         const groups = yield group_1.default.find();
@@ -25,7 +38,7 @@ GroupController.getGroups = (req, res, next) => tslib_1.__awaiter(void 0, void 0
 });
 GroupController.getGroup = (req, res, next) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
     try {
-        const group = yield group_1.default.find({ _id: req.params.id });
+        const group = yield group_1.default.find({ id: req.params.id });
         res.json(group);
     }
     catch (error) {
@@ -86,7 +99,7 @@ TripController.getTrips = (req, res, next) => tslib_1.__awaiter(void 0, void 0, 
 });
 TripController.getTrip = (req, res, next) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
     try {
-        const trip = yield trip_1.default.find({ _id: req.params.id });
+        const trip = yield trip_1.default.find({ id: req.params.id });
         res.json(trip);
     }
     catch (error) {
@@ -340,8 +353,9 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const express = __webpack_require__("express");
 const GroupController_1 = __webpack_require__("./apps/api/src/app/controllers/GroupController.ts");
 const router = express.Router();
+router.get('/groups/user/:id', GroupController_1.default.getGroupsByUserId);
 router.get('/groups', GroupController_1.default.getGroups);
-router.get('/group', GroupController_1.default.getGroup);
+router.get('/group/:id', GroupController_1.default.getGroup);
 router.post('/group', GroupController_1.default.createGroup);
 router.put('/group/:id', GroupController_1.default.updateGroup);
 router.delete('/group/:id', GroupController_1.default.deleteGroup);

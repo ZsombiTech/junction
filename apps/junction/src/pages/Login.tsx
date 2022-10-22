@@ -9,6 +9,7 @@ export const Login = () => {
     if (userId.length > 0) {
       const response = await axios.get(`api/user/${userId}`);
       if (response.data && response.data.length > 0) {
+        localStorage.setItem('userId', userId);
         window.location.href = '/home';
       } else {
         alert('User not found');
