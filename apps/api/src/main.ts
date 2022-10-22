@@ -3,6 +3,7 @@ import { Message } from '@junction/api-interfaces';
 import GroupRoutes from './app/routes/group';
 import TripRoutes from './app/routes/trips';
 import UserRoutes from './app/routes/user';
+import SpendingRoutes from './app/routes/spending';
 import 'dotenv/config';
 import mongoose from 'mongoose';
 
@@ -27,6 +28,7 @@ async function main() {
 app.use('/api', GroupRoutes);
 app.use('/api', TripRoutes);
 app.use('/api', UserRoutes);
+app.use('/api', SpendingRoutes);
 app.get('/api', (req, res) => {
   res.send(greeting);
 });
