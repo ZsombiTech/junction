@@ -1,6 +1,19 @@
 import GroupModel from '../models/group';
 
 export default class GroupController {
+  static getGroupsByUserId = async (req, res, next) => {
+    try {
+      const groups = await GroupModel.find({
+        members: {
+          $elemMatch: { id: req.params.id },
+        },
+      });
+      res.json(groups);
+    } catch (error) {
+      next(error);
+    }
+  };
+
   static getGroups = async (req, res, next) => {
     try {
       const groups = await GroupModel.find();
@@ -11,7 +24,7 @@ export default class GroupController {
   };
   static getGroup = async (req, res, next) => {
     try {
-      const group = await GroupModel.find({ _id: req.params.id });
+      const group = await GroupModel.find({ id: req.params.id });
       res.json(group);
     } catch (error) {
       next(error);

@@ -2,16 +2,32 @@ import '../assets/style/friends.css';
 import backbutton from '../assets/images/BackButton.svg';
 import addbutton from '../assets/images/AddButton.svg';
 import TripComponent from '../components/TripComponent';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 export const Friends = () => {
+  useEffect(() => {
+    const userId = localStorage.getItem('userId');
+    if (!userId) {
+      window.location.href = '/login';
+    }
+    const params = new URLSearchParams(window.location.pathname);
+    const groupId = params.get('groupId');
+    console.log(groupId);
+    if (groupId) {
+      axios.get(`api/group/${groupId}`).then((data) => {
+        console.log(data.data);
+      });
+    }
+  }, []);
   return (
     <div>
       <div className="header">
-        <img src={backbutton} alt="back" className="backButton" />
+        <Link to="/home">
+          <img src={backbutton} alt="back" className="backButton" />
+        </Link>
         <h1 className="headerText">My Friends</h1>
-        <p>randoom</p>
       </div>
       <div className="onerow">
         <button className="bluebutton">Split payment</button>
