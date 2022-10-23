@@ -4,6 +4,7 @@
   background-color: #fff;
   border-radius: 12px;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 .group-container h1 {
