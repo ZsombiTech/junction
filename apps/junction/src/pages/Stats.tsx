@@ -10,7 +10,7 @@ export const Stats = () => {
  
   return (
     <div className='fill-page bg-blue'>
-      <div className="header trip">
+      <div className="header header-stats">
         <img src={backbutton} alt="back" className="backButton" />
         <p className="headerText">Spending Statistics</p>
       </div>

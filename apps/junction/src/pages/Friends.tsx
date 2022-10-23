@@ -83,7 +83,7 @@ export const Friends = () => {
             <TripPageTransaction
               transactionName={transaction.person}
               amount={transaction.amount}
-              currency={'HUF'}
+              currency={'EUR'}
               name={transaction.person}
               date={transaction.time}
             />
