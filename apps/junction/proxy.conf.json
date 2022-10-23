@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://deducks.tk:4201",
+    "target": "localhost:3333/api/",
     "secure": false
   }
 }

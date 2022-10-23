@@ -11,7 +11,7 @@ export default class TripController {
   };
   static getTrip = async (req, res, next) => {
     try {
-      const trip = await TripModel.find({ _id: req.params.id });
+      const trip = await TripModel.find({ id: req.params.id });
       res.json(trip);
     } catch (error) {
       next(error);

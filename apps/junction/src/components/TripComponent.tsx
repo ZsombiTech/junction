@@ -8,6 +8,8 @@ export interface TripComponentProps {
   place: string;
   spent: number;
   pooled: number;
+  groupId: string;
+  tripId: string;
 }
 
 export const TripComponent = ({
@@ -15,9 +17,15 @@ export const TripComponent = ({
   place,
   spent,
   pooled,
+  groupId,
+  tripId,
 }: TripComponentProps) => {
+  const redirectClick = () => {
+    window.location.href = `/trip?groupId=${groupId}&tripID=${tripId}`;
+  };
+
   return (
-    <div className="flexrow">
+    <div onClick={redirectClick} className="flexrow">
       <div className="flexcol">
         <div className="flexr">
           <h1 className="trimcomponentName">{name}</h1>
@@ -28,9 +36,8 @@ export const TripComponent = ({
           <p className="trimcomponentPrice">{pooled} EUR pooled</p>
         </div>
       </div>
-      <Link to="/edittrip">
-        <img src={rightarrow} alt="right" className="rightArrow" />
-      </Link>
+
+      <img src={rightarrow} alt="right" className="rightArrow" />
     </div>
   );
 };

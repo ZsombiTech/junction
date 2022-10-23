@@ -40,3 +40,5 @@ Thumbs.db
 
 # secrets
 .env
+
+/apps/junction/proxy.conf.json

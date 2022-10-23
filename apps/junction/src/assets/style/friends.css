@@ -51,6 +51,14 @@
   justify-content: space-between;
   align-items: center;
 }
+.onerow3 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+}
 
 .tripsText {
   font-family: 'arial', sans-serif;

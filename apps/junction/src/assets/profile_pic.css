@@ -1,11 +1,11 @@
-.profilepic {
+.pfp {
     width: fit-content;
     height: 26px;
     display: inline-block;
     margin-left: -10px;
 }
 
-.profilepic img {
+.pfp img {
     width: 26px;
     height: 26px;
     border-radius: 99px;

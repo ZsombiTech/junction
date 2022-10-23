@@ -17,12 +17,14 @@
 
 .money.plus {
     color: #28BE49;
+    text-align: center;
 }
 
 .money.minus {
     color: #CF1717;
+    text-align: right;
 }
 
-.header.trip {
+.header.header-stats {
     margin-bottom: 30px;
 }

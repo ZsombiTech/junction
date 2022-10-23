@@ -42,6 +42,7 @@ export interface Group {
   name: string;
   members: User[];
   trips: Trip[];
+  transactions: Transaction[];
   createdAt: Date;
   updatedAt: Date;
 }

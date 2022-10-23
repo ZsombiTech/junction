@@ -11,15 +11,15 @@ const Trip_schema = new mongoose.Schema({
   },
   from: {
     type: String,
-    required: true,
+    default: '',
   },
   to: {
     type: String,
     required: true,
   },
   date: {
-    type: Date,
-    required: true,
+    type: String,
+    default: '',
   },
   transactions: {
     type: Array,

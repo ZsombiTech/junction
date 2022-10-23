@@ -3,6 +3,8 @@
   margin: 0 15px;
   background-color: #fff;
   border-radius: 12px;
+  margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 .group-container h1 {
@@ -24,7 +26,7 @@
 .group-members p {
   font-size: 13px;
   font-weight: 400;
-  color: #8F96A3;
+  color: #8f96a3;
   display: inline-block;
   margin-left: 6px;
 }
