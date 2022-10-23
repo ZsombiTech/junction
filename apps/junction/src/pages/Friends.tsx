@@ -23,12 +23,13 @@ export const Friends = () => {
     const groupId = window.location.href.split('=').pop();
     if (groupId) {
       setGroupId(groupId);
-      axios.get<Group[]>(`http://localhost:3333/api/group/${groupId}`).then((data) => {
-        console.log(data.data);
-        setGroupName(data.data[0].name);
-        setTrips(data.data[0].trips);
-        setTransactions(data.data[0].transactions);
-      });
+      axios
+        .get<Group[]>(`http://localhost:3333/api/group/${groupId}`)
+        .then((data) => {
+          setGroupName(data.data[0].name);
+          setTrips(data.data[0].trips);
+          setTransactions(data.data[0].transactions);
+        });
     }
   }, []);
   return (
@@ -89,7 +90,16 @@ export const Friends = () => {
           ))
         ) : (
           <div style={{ marginTop: '1rem' }}>
-            <h3 className="tripsText">No transactions yet</h3>
+            <h3
+              className="tripsText"
+              style={{
+                textAlign: 'center',
+                marginTop: '1rem',
+                fontSize: '0.9rem',
+              }}
+            >
+              No transactions yet
+            </h3>
           </div>
         )}
       </div>
