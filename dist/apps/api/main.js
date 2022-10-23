@@ -15,6 +15,7 @@ class GroupController {
 exports["default"] = GroupController;
 _a = GroupController;
 GroupController.getGroupsByUserId = (req, res, next) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
+    console.log("csumi");
     try {
         const groups = yield group_1.default.find({
             members: {
@@ -161,6 +162,15 @@ UserController.getUsers = (req, res, next) => tslib_1.__awaiter(void 0, void 0, 
 UserController.getUser = (req, res, next) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
     try {
         const user = yield user_1.default.find({ id: req.params.id });
+        res.json(user);
+    }
+    catch (error) {
+        next(error);
+    }
+});
+UserController.getUserByEmail = (req, res, next) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const user = yield user_1.default.find({ email: req.params.email });
         res.json(user);
     }
     catch (error) {
@@ -395,6 +405,7 @@ const express = __webpack_require__("express");
 const UserController_1 = __webpack_require__("./apps/api/src/app/controllers/UserController.ts");
 const router = express.Router();
 router.get('/users', UserController_1.default.getUsers);
+router.get('/user_email/:email', UserController_1.default.getUserByEmail);
 router.get('/user/:id', UserController_1.default.getUser);
 router.post('/user', UserController_1.default.createUser);
 router.put('/user/:id', UserController_1.default.updateUser);
