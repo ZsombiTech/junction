@@ -20,8 +20,12 @@ export const TripComponent = ({
   groupId,
   tripId,
 }: TripComponentProps) => {
+  const redirectClick = () => {
+    window.location.href = `/trip?tripID=${tripId}`;
+  };
+
   return (
-    <div className="flexrow">
+    <div onClick={redirectClick} className="flexrow">
       <div className="flexcol">
         <div className="flexr">
           <h1 className="trimcomponentName">{name}</h1>

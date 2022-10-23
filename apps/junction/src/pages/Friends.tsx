@@ -24,6 +24,7 @@ export const Friends = () => {
     if (groupId) {
       setGroupId(groupId);
       axios.get<Group[]>(`http://localhost:3333/api/group/${groupId}`).then((data) => {
+        console.log(data.data);
         setGroupName(data.data[0].name);
         setTrips(data.data[0].trips);
         setTransactions(data.data[0].transactions);
@@ -81,7 +82,7 @@ export const Friends = () => {
             <TripPageTransaction
               transactionName={transaction.person}
               amount={transaction.amount}
-              currency={'HUF'}
+              currency={'EUR'}
               name={transaction.person}
               date={transaction.time}
             />

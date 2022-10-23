@@ -53,6 +53,7 @@ export const App = () => {
           </Route>
           <Route path="/trip">
             <Trip />
+            <Navbar />
           </Route>
           <Route path="/stats">
             <Stats />
