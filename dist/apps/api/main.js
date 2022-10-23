@@ -221,6 +221,10 @@ const Group_schema = new mongoose_1.default.Schema({
         type: Array,
         default: [],
     },
+    transactions: {
+        type: Array,
+        default: [],
+    },
     createdAt: {
         type: Date,
         default: Date.now,
@@ -252,15 +256,15 @@ const Trip_schema = new mongoose_1.default.Schema({
     },
     from: {
         type: String,
-        required: true,
+        default: '',
     },
     to: {
         type: String,
         required: true,
     },
     date: {
-        type: Date,
-        required: true,
+        type: String,
+        default: '',
     },
     transactions: {
         type: Array,
@@ -373,7 +377,7 @@ const express = __webpack_require__("express");
 const TripController_1 = __webpack_require__("./apps/api/src/app/controllers/TripController.ts");
 const router = express.Router();
 router.get('/trips', TripController_1.default.getTrips);
-router.get('/trip', TripController_1.default.getTrip);
+router.get('/trip/:id', TripController_1.default.getTrip);
 router.post('/trip', TripController_1.default.createTrip);
 router.put('/trip/:id', TripController_1.default.updateTrip);
 router.delete('/trip/:id', TripController_1.default.deleteTrip);
