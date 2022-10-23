@@ -43,6 +43,7 @@ export const TransferBalance = () => {
         });
         await axios.put(`api/user/${user.data[0]._id}`, {
           currentMoney: parseInt(user.data[0].currentMoney) - parseInt(amount),
+          transactions: [...user.data[0].transactions, transaction],
         });
         setTripBalance(
           `${parseInt(user.data[0].currentMoney) - parseInt(amount)}`
