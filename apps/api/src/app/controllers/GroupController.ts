@@ -2,7 +2,6 @@ import GroupModel from '../models/group';
 
 export default class GroupController {
   static getGroupsByUserId = async (req, res, next) => {
-    console.log("csumi")
     try {
       const groups = await GroupModel.find({
         members: {

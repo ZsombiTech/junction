@@ -9,11 +9,12 @@ export const Login = () => {
 
   const login = async () => {
     if (userId.length > 0) {
-      const response = await axios.get(`http://localhost:3333/api/user/${userId}`);
+      const response = await axios.get(
+        `http://localhost:3333/api/user/${userId}`
+      );
       if (response.data && response.data.length > 0) {
         localStorage.setItem('userId', userId);
         window.location.href = '/home';
-        alert('Logged in');
       } else {
         alert('User not found');
       }

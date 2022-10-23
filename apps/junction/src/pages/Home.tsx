@@ -10,15 +10,17 @@ export const Home = () => {
   const [groups, setGroups] = useState<Group[]>([]);
 
   useEffect(() => {
-    console.log("loaded")
+    console.log('loaded');
     const userId = localStorage.getItem('userId');
     if (!userId) {
       window.location.href = '/login';
     }
-    axios.get<Group[]>(`http://localhost:3333/api/groups/user/${userId}`).then((data) => {
-      setGroups(data.data);
-      console.log(data.data, "f");
-    });
+    axios
+      .get<Group[]>(`http://localhost:3333/api/groups/user/${userId}`)
+      .then((data) => {
+        setGroups(data.data);
+        console.log(data.data, 'f');
+      });
   }, []);
 
   return (
