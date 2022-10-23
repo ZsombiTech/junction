@@ -33,17 +33,22 @@ export const AddTrip = () => {
     if (!tripName || !tripLocation) {
       alert('Please fill out all fields');
     } else {
-      const newTrip = await axios.post('api/trip', {
+      const newTrip = await axios.post('http://deducks2.tk:4201/api/trip', {
         id: makeid(5),
         name: tripName,
         to: tripLocation,
       });
 
-      const group = await axios.get(`http://deducks2.tk:4201/api/group/${groupId}`);
+      const group = await axios.get(
+        `http://deducks2.tk:4201/api/group/${groupId}`
+      );
 
-      await axios.put(`http://deducks2.tk:4201/api/group/${group.data[0]._id}`, {
-        trips: [...group.data[0].trips, newTrip.data],
-      });
+      await axios.put(
+        `http://deducks2.tk:4201/api/group/${group.data[0]._id}`,
+        {
+          trips: [...group.data[0].trips, newTrip.data],
+        }
+      );
     }
   };
 

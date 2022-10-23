@@ -31,7 +31,7 @@ export const Stats = () => {
       window.location.href = '/login';
     }
 
-    axios.get(`/api/trip/${tripID}`).then((data) => {
+    axios.get(`http://deducks2.tk:4201/api/trip/${tripID}`).then((data) => {
       setStats(data.data[0].transactions);
     });
   }, []);

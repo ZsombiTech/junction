@@ -17,10 +17,6 @@ import Friends from '../pages/Friends';
 import Main from '../pages/Main';
 
 export const App = () => {
-  useEffect(() => {
-    axios.get<User[]>('api/users').then((data) => console.log(data.data));
-  }, []);
-
   return (
     <Router>
       <div className="background">

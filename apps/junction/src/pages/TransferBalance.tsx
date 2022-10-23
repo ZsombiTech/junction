@@ -27,7 +27,7 @@ export const TransferBalance = () => {
     if (!userId) {
       window.location.href = '/login';
     }
-    axios.get(`api/user/${userId}`).then((res) => {
+    axios.get(`http://deducks2.tk:4201/api/user/${userId}`).then((res) => {
       console.log(res.data[0]);
       setTripBalance(res.data[0].currentMoney);
     });
@@ -38,8 +38,12 @@ export const TransferBalance = () => {
       alert('Please fill out all fields');
     } else {
       if (tripID) {
-        const trip = await axios.get(`api/trip/${tripID}`);
-        const user = await axios.get(`api/user/${userId}`);
+        const trip = await axios.get(
+          `http://deducks2.tk:4201/api/trip/${tripID}`
+        );
+        const user = await axios.get(
+          `http://deducks2.tk:4201/api/user/${userId}`
+        );
         const newBalance = parseInt(trip.data[0].balance) + parseInt(amount);
         const transaction = {
           time: new Date(),
@@ -49,16 +53,23 @@ export const TransferBalance = () => {
           place: trip.data[0].to,
           status: 'sent',
         };
-        await axios.put(`api/trip/${trip.data[0]._id}`, {
-          balance: newBalance,
-          transactions: [...trip.data[0].transactions, transaction],
-        });
-        await axios.put(`api/user/${user.data[0]._id}`, {
-          currentMoney: parseInt(user.data[0].currentMoney) - parseInt(amount),
-          transasctions: user.data[0].transasctions
-            ? [...user.data[0].transasctions, transaction]
-            : [transaction],
-        });
+        await axios.put(
+          `http://deducks2.tk:4201/api/trip/${trip.data[0]._id}`,
+          {
+            balance: newBalance,
+            transactions: [...trip.data[0].transactions, transaction],
+          }
+        );
+        await axios.put(
+          `http://deducks2.tk:4201/api/user/${user.data[0]._id}`,
+          {
+            currentMoney:
+              parseInt(user.data[0].currentMoney) - parseInt(amount),
+            transasctions: user.data[0].transasctions
+              ? [...user.data[0].transasctions, transaction]
+              : [transaction],
+          }
+        );
         setTripBalance(
           `${parseInt(user.data[0].currentMoney) - parseInt(amount)}`
         );
