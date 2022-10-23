@@ -33,7 +33,7 @@ export const AddTrip = () => {
     if (!tripName || !tripLocation) {
       alert('Please fill out all fields');
     } else {
-      const newTrip = await axios.post('http://localhost:3333/api/trip', {
+      const newTrip = await axios.post('api/trip', {
         id: makeid(5),
         name: tripName,
         to: tripLocation,

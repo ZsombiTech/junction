@@ -33,7 +33,6 @@ export default class GroupController {
   };
   static createGroup = async (req, res, next) => {
     try {
-      console.log(req.body, "new group")
       const group = await GroupModel.create(req.body);
       res.json(group);
     } catch (error) {
