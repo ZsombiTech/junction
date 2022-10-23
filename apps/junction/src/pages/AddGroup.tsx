@@ -56,7 +56,7 @@ export const AddGroup = () => {
     membersCopy.push(userData);
     console.log(membersCopy)
     await axios
-      .post('http://localhost:3333/api/group', { name: name, id: makeid(5), members: members })
+      .post('http://localhost:3333/api/group', { name: name, id: makeid(5), members: membersCopy })
       .then((res) => {
         alert('Group created');
       });

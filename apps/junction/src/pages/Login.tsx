@@ -4,6 +4,8 @@ import axios from 'axios';
 
 export const Login = () => {
   const [userId, setUserId] = useState('');
+  const [regUserId, setRegUserId] = useState('');
+
 
   const login = async () => {
     if (userId.length > 0) {
@@ -20,6 +22,7 @@ export const Login = () => {
     }
   };
 
+
   return (
     <div>
       <h1 className="loginTitle">Budget Buddy</h1>
@@ -35,6 +38,23 @@ export const Login = () => {
       </div>
       <div className="loginbtncontainer">
         <button className="loginbluebtn" onClick={login}>
+          Login
+        </button>
+      </div>
+      <div className="spacebotttom">
+        <h1 className="inputLabel">Or create a test account:</h1>
+
+        <h1 className="inputLabel">User ID</h1>
+        <input
+          className="inputBox"
+          type="search"
+          placeholder="Type here"
+          value={regUserId}
+          onChange={(e) => setRegUserId(e.target.value)}
+        />
+      </div>
+      <div className="loginbtncontainer">
+        <button className="loginbluebtn" onClick={}>
           Login
         </button>
       </div>

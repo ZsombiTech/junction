@@ -75,3 +75,7 @@ input:focus {
   display: flex;
   justify-content: center;
 }
+
+.spacebotttom {
+  margin-top: 20px;
+}

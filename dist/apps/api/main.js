@@ -48,6 +48,7 @@ GroupController.getGroup = (req, res, next) => tslib_1.__awaiter(void 0, void 0,
 });
 GroupController.createGroup = (req, res, next) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
     try {
+        console.log(req.body, "new group");
         const group = yield group_1.default.create(req.body);
         res.json(group);
     }
