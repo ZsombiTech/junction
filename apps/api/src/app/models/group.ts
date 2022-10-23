@@ -17,6 +17,10 @@ const Group_schema = new mongoose.Schema({
     type: Array,
     default: [],
   },
+  transactions: {
+    type: Array,
+    default: [],
+  },
   createdAt: {
     type: Date,
     default: Date.now,

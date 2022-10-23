@@ -8,6 +8,8 @@ export interface TripComponentProps {
   place: string;
   spent: number;
   pooled: number;
+  groupId: string;
+  tripId: string;
 }
 
 export const TripComponent = ({
@@ -15,6 +17,8 @@ export const TripComponent = ({
   place,
   spent,
   pooled,
+  groupId,
+  tripId,
 }: TripComponentProps) => {
   return (
     <div className="flexrow">
@@ -28,7 +32,7 @@ export const TripComponent = ({
           <p className="trimcomponentPrice">{pooled} EUR pooled</p>
         </div>
       </div>
-      <Link to="/edittrip">
+      <Link to={`/edittrip?groupId=${groupId}&tripId=${tripId}`}>
         <img src={rightarrow} alt="right" className="rightArrow" />
       </Link>
     </div>
