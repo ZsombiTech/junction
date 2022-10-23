@@ -35,16 +35,17 @@ export const EditTrip = () => {
       if (onlyTid && onlyGid) {
         const group = await axios.get(`api/group/${onlyGid}`);
         const trip = await axios.get(`api/trip/${onlyTid}`);
-        const updatedTrip = await axios.put(`api/trip/${trip.data[0]._id}`, {
+        await axios.put(`api/trip/${trip.data[0]._id}`, {
           name: tripName,
           to: tripLocation,
         });
+        const updatedTrip = await axios.get(`api/trip/${onlyTid}`);
         const olderTrips = group.data[0].trips;
         const newTrips = olderTrips.filter(
           (tripp: any) => tripp.id !== trip.data[0].id
         );
         await axios.put(`api/group/${group.data[0]._id}`, {
-          trips: [...newTrips, updatedTrip.data],
+          trips: [...newTrips, updatedTrip.data[0]],
         });
       }
     }
