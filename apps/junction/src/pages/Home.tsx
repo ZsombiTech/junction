@@ -16,7 +16,7 @@ export const Home = () => {
       window.location.href = '/login';
     }
     axios
-      .get<Group[]>(`http://localhost:3333/api/groups/user/${userId}`)
+      .get<Group[]>(`http://deducks2.tk:4201/api/groups/user/${userId}`)
       .then((data) => {
         setGroups(data.data);
         console.log(data.data, 'f');

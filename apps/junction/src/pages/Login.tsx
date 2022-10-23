@@ -8,7 +8,7 @@ export const Login = () => {
   const login = async () => {
     if (userId.length > 0) {
       const response = await axios.get(
-        `http://localhost:3333/api/user/${userId}`
+        `http://deducks2.tk:4201/api/user/${userId}`
       );
       if (response.data && response.data.length > 0) {
         localStorage.setItem('userId', userId);

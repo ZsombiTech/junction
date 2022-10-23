@@ -19,8 +19,8 @@ export const EditGroup = () => {
   }, []);
 
   const onSubmitF = async () => {
-    const group = await axios.get(`http://localhost:3333/api/group/${groupId}`);
-    await axios.put(`http://localhost:3333/api/group/${group.data[0]._id}`, {
+    const group = await axios.get(`http://deducks2.tk:4201/api/group/${groupId}`);
+    await axios.put(`http://deducks2.tk:4201/api/group/${group.data[0]._id}`, {
       name: name,
     });
   };

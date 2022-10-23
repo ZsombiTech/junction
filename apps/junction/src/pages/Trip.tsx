@@ -49,7 +49,7 @@ export const TripPage = () => {
     }
 
     axios
-      .get<Trip[]>(`http://localhost:3333/api/trip/${tripID}`)
+      .get<Trip[]>(`http://deducks2.tk:4201/api/trip/${tripID}`)
       .then((data) => {
         setTripName(data.data[0].name);
         setTripDestination(data.data[0].to);
