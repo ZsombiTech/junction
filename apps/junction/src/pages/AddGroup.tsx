@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { User } from '@junction/api-interfaces';
 
-
 const makeid = (length: number) => {
   let result = '';
   const characters =
@@ -27,36 +26,44 @@ export const AddGroup = () => {
     const member = prompt('Enter member email');
     if (member == null) return;
 
-    await axios.get(`http://deducks2.tk:4201/api/user_email/${member}`).then((res) => {
-      console.log(res.data);
-      if (res.data.length > 0) {
-        setMembers([...members, res.data[0]]);
-      } else {
-        alert('User not found');
-      }
-    });
+    await axios
+      .get(`http://deducks2.tk:4201/api/user_email/${member}`)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.length > 0) {
+          setMembers([...members, res.data[0]]);
+        } else {
+          alert('User not found');
+        }
+      });
   };
 
   const onSubmit = async () => {
-    console.log("submitting");
+    console.log('submitting');
     let userData;
     const userId = localStorage.getItem('userId');
     if (!userId) {
       window.location.href = '/login';
     }
-    await axios.get(`http://deducks2.tk:4201/api/user/${userId}`).then((data) => {
-      if (data.data.length > 0) {
-        userData = data.data[0];
-      }
-    });
-    
+    await axios
+      .get(`http://deducks2.tk:4201/api/user/${userId}`)
+      .then((data) => {
+        if (data.data.length > 0) {
+          userData = data.data[0];
+        }
+      });
+
     // copy members state to new array
     const membersCopy = [...members];
     if (userData === undefined) return;
     membersCopy.push(userData);
-    console.log(membersCopy)
+    console.log(membersCopy);
     await axios
-      .post('http://deducks2.tk:4201/api/group', { name: name, id: makeid(5), members: members })
+      .post('http://deducks2.tk:4201/api/group', {
+        name: name,
+        id: makeid(5),
+        members: membersCopy,
+      })
       .then((res) => {
         alert('Group created');
       });
@@ -82,20 +89,25 @@ export const AddGroup = () => {
       </div>
       <div className="onerow2">
         <h3 className="tripsText">Members</h3>
-        <img src={addbutton} alt="add" className="addButton" onClick={addMember}/>
+        <img
+          src={addbutton}
+          alt="add"
+          className="addButton"
+          onClick={addMember}
+        />
       </div>
       {members.length > 0 ? (
         members.map((member) => {
-          return(
-          <div className='newgroupMember'>
-            <p>{member.email}</p>
-          </div>
-          )
+          return (
+            <div className="newgroupMember">
+              <p>{member.email}</p>
+            </div>
+          );
         })
       ) : (
-        <p className='newgroupMember'>No members</p>
+        <p className="newgroupMember">No members</p>
       )}
-      
+
       <BottomPageButton onClick={onSubmit} />
     </div>
   );
