@@ -27,7 +27,7 @@ export const AddGroup = () => {
     const member = prompt('Enter member email');
     if (member == null) return;
 
-    await axios.get(`http://localhost:3333/api/user_email/${member}`).then((res) => {
+    await axios.get(`http://deducks2.tk:4201/api/user_email/${member}`).then((res) => {
       console.log(res.data);
       if (res.data.length > 0) {
         setMembers([...members, res.data[0]]);
@@ -44,7 +44,7 @@ export const AddGroup = () => {
     if (!userId) {
       window.location.href = '/login';
     }
-    await axios.get(`http://localhost:3333/api/user/${userId}`).then((data) => {
+    await axios.get(`http://deducks2.tk:4201/api/user/${userId}`).then((data) => {
       if (data.data.length > 0) {
         userData = data.data[0];
       }
@@ -56,7 +56,7 @@ export const AddGroup = () => {
     membersCopy.push(userData);
     console.log(membersCopy)
     await axios
-      .post('http://localhost:3333/api/group', { name: name, id: makeid(5), members: members })
+      .post('http://deducks2.tk:4201/api/group', { name: name, id: makeid(5), members: members })
       .then((res) => {
         alert('Group created');
       });

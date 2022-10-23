@@ -24,7 +24,7 @@ export const Friends = () => {
     if (groupId) {
       setGroupId(groupId);
       axios
-        .get<Group[]>(`http://localhost:3333/api/group/${groupId}`)
+        .get<Group[]>(`http://deducks2.tk:4201/api/group/${groupId}`)
         .then((data) => {
           setGroupName(data.data[0].name);
           setTrips(data.data[0].trips);

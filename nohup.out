@@ -428,3 +428,97 @@ chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m
 chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 1.7 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
 webpack compiled [1m[32msuccessfully[39m[22m (fb1fb133ff7fdc97)
 No errors found.
+
+> junction@0.0.0 start
+> nx run api:serve:development
+
+
+> nx run api:serve
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 11 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (86bbff02f2032df4)
+Type-checking in progress...
+Starting inspector on localhost:9229 failed: address already in use
+hzsombi
+Error: listen EADDRINUSE: address already in use :::3333
+    at Server.setupListenHandle [as _listen2] (node:net:1469:16)
+    at listenInCluster (node:net:1517:12)
+    at Server.listen (node:net:1605:7)
+    at Function.listen (/home/thetuberbee/junction/node_modules/express/lib/application.js:635:24)
+    at /home/thetuberbee/junction/dist/apps/api/webpack:/junction/apps/api/src/main.ts:39:20
+    at /home/thetuberbee/junction/dist/apps/api/main.js:520:3
+    at Object.<anonymous> (/home/thetuberbee/junction/dist/apps/api/main.js:525:12)
+    at Module._compile (node:internal/modules/cjs/loader:1159:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1213:10)
+    at Module.load (node:internal/modules/cjs/loader:1037:32) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 3333
+}
+Connected to MongoDB
+
+> junction@0.0.0 start2
+> nx run junction:serve:development --host=0.0.0.0 --port=4200
+
+
+> nx run junction:serve:development --host=0.0.0.0 --port=4200
+
+No errors found.
+<i> [webpack-dev-server] [HPM] Proxy created: /api  -> deducks2.tk:4201/api/
+<i> [webpack-dev-server] Project is running at:
+<i> [webpack-dev-server] Loopback: http://localhost:4200/
+<i> [webpack-dev-server] On Your Network (IPv4): http://192.168.1.30:4200/
+<i> [webpack-dev-server] 404s will fallback to '/index.html'
+
+>  NX  Web Development Server is listening at http://0.0.0.0:4200/
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 3.42 MiB (3.55 MiB) = [1m[32mruntime.js[39m[22m 51 KiB [1m[32mvendor.js[39m[22m 2.9 MiB [1m[32mmain.js[39m[22m 489 KiB 5 auxiliary assets
+Entrypoint [1mpolyfills[39m[22m [1m[33m[big][39m[22m 773 KiB (937 KiB) = [1m[32mruntime.js[39m[22m 51 KiB [1m[32mpolyfills.js[39m[22m 722 KiB 2 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 447 KiB (540 KiB) = [1m[32mruntime.js[39m[22m 51 KiB [1m[32mstyles.css[39m[22m 11.4 KiB [1m[32mstyles.js[39m[22m 385 KiB 2 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m (main) 323 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mpolyfills.js[39m[22m (polyfills) 672 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m (runtime) 34.2 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 367 KiB (javascript) 11.4 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.55 MiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (b240b09b61c62d49)
+No errors found.
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/trip/00KCf to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/user/123456 to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/user/123456 to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/trip/7jgtt to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/group/cbP3x to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/trip to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/trip to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/users to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
+<e> [webpack-dev-server] [HPM] Error occurred while proxying request deducks2.tk:4200/api/trip to deducks2.tk:4201/api/ [ETIMEDOUT] (https://nodejs.org/api/errors.html#errors_common_system_errors)
