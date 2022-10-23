@@ -5,6 +5,8 @@ import BottomPageButton from '../components/BottomPageButton';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { User } from '@junction/api-interfaces';
+
 
 const makeid = (length: number) => {
   let result = '';
@@ -19,22 +21,42 @@ const makeid = (length: number) => {
 
 export const AddGroup = () => {
   const [name, setName] = useState('');
+  const [members, setMembers] = useState<User[]>([]);
+
+  const addMember = async () => {
+    const member = prompt('Enter member email');
+    if (member == null) return;
+
+    await axios.get(`http://localhost:3333/api/user_email/${member}`).then((res) => {
+      console.log(res.data);
+      if (res.data.length > 0) {
+        setMembers([...members, res.data[0]]);
+      } else {
+        alert('User not found');
+      }
+    });
+  };
 
   const onSubmit = async () => {
+    console.log("submitting");
     let userData;
     const userId = localStorage.getItem('userId');
     if (!userId) {
       window.location.href = '/login';
     }
-    await axios.get(`api/user/${userId}`).then((data) => {
+    await axios.get(`http://localhost:3333/api/user/${userId}`).then((data) => {
       if (data.data.length > 0) {
         userData = data.data[0];
       }
     });
-    const members = [];
-    members.push(userData);
+    
+    // copy members state to new array
+    const membersCopy = [...members];
+    if (userData === undefined) return;
+    membersCopy.push(userData);
+    console.log(membersCopy)
     await axios
-      .post('api/group', { name: name, id: makeid(5), members: members })
+      .post('http://localhost:3333/api/group', { name: name, id: makeid(5), members: members })
       .then((res) => {
         alert('Group created');
       });
@@ -60,8 +82,20 @@ export const AddGroup = () => {
       </div>
       <div className="onerow2">
         <h3 className="tripsText">Members</h3>
-        <img src={addbutton} alt="add" className="addButton" />
+        <img src={addbutton} alt="add" className="addButton" onClick={addMember}/>
       </div>
+      {members.length > 0 ? (
+        members.map((member) => {
+          return(
+          <div className='newgroupMember'>
+            <p>{member.email}</p>
+          </div>
+          )
+        })
+      ) : (
+        <p className='newgroupMember'>No members</p>
+      )}
+      
       <BottomPageButton onClick={onSubmit} />
     </div>
   );

@@ -7,6 +7,12 @@
   margin-bottom: 2rem;
 }
 
+.newgroupMember {
+  color: white;
+  margin-left: 20px;
+  margin-bottom: 8px;
+}
+
 .headerText {
   font-family: 'Poppins', sans-serif;
   color: white;
