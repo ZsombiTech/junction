@@ -10,12 +10,14 @@ export const Home = () => {
   const [groups, setGroups] = useState<Group[]>([]);
 
   useEffect(() => {
+    console.log("loaded")
     const userId = localStorage.getItem('userId');
     if (!userId) {
       window.location.href = '/login';
     }
-    axios.get<Group[]>(`api/groups/user/${userId}`).then((data) => {
+    axios.get<Group[]>(`http://localhost:3333/api/groups/user/${userId}`).then((data) => {
       setGroups(data.data);
+      console.log(data.data, "f");
     });
   }, []);
 
@@ -32,8 +34,9 @@ export const Home = () => {
       </div>
       <div className="groups-wrapper">
         {groups.length > 0 ? (
-          groups.map((group) => (
+          groups.map((group, index) => (
             <GroupComponent
+              key={index}
               groupName={group.name}
               memberText={`${group.members.length} members`}
               groupId={group.id}

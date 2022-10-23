@@ -23,7 +23,7 @@ export const Friends = () => {
     const groupId = window.location.href.split('=').pop();
     if (groupId) {
       setGroupId(groupId);
-      axios.get<Group[]>(`api/group/${groupId}`).then((data) => {
+      axios.get<Group[]>(`http://localhost:3333/api/group/${groupId}`).then((data) => {
         setGroupName(data.data[0].name);
         setTrips(data.data[0].trips);
         setTransactions(data.data[0].transactions);
