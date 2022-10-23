@@ -33,18 +33,19 @@ export const EditTrip = () => {
       alert('Please fill out all fields');
     } else {
       if (onlyTid && onlyGid) {
-        const group = await axios.get(`http://localhost:3333/api/group/${onlyGid}`);
-        const trip = await axios.get(`http://localhost:3333/api/trip/${onlyTid}`);
-        const updatedTrip = await axios.put(`http://localhost:3333/api/trip/${trip.data[0]._id}`, {
+        const group = await axios.get(`api/group/${onlyGid}`);
+        const trip = await axios.get(`api/trip/${onlyTid}`);
+        await axios.put(`api/trip/${trip.data[0]._id}`, {
           name: tripName,
           to: tripLocation,
         });
+        const updatedTrip = await axios.get(`api/trip/${onlyTid}`);
         const olderTrips = group.data[0].trips;
         const newTrips = olderTrips.filter(
           (tripp: any) => tripp.id !== trip.data[0].id
         );
-        await axios.put(`http://localhost:3333/api/group/${group.data[0]._id}`, {
-          trips: [...newTrips, updatedTrip.data],
+        await axios.put(`api/group/${group.data[0]._id}`, {
+          trips: [...newTrips, updatedTrip.data[0]],
         });
       }
     }
