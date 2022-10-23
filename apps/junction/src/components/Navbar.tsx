@@ -16,6 +16,15 @@ export const Navbar = () => {
   const [groupsClicked, setGroupsClicked] = useState(false);
   const [accountClicked, setAccountClicked] = useState(false);
 
+
+  // when home is clicked clear localstorage
+  const homeClick = () => {
+    console.log("clearing LS")
+    localStorage.clear();
+    alert("You have been logged out");
+    window.location.href = '/';
+  };
+
   return (
     <div className="navbarContainer">
       <div>
@@ -25,7 +34,7 @@ export const Navbar = () => {
               src={homeclicked}
               alt="home"
               className="navItem"
-              onClick={() => setHomeClicked(false)}
+              onClick={homeClick}
             />
           </Link>
         ) : (
