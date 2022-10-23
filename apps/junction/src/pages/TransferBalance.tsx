@@ -7,19 +7,7 @@ import axios from 'axios';
 
 export const TransferBalance = () => {
   const userId = localStorage.getItem('userId');
-
-  const allIds = window.location.href.split('?').pop();
-  let onlyGid: string | undefined = '';
-  let tripID: string | undefined = '';
-  if (allIds) {
-    const allId = allIds.split('&');
-    const groupId = allId[0];
-
-    onlyGid = groupId.split('=').pop();
-
-    const tripId = allId[1];
-    tripID = tripId.split('=').pop();
-  }
+  const tripId = window.location.href.split('=').pop();
   const [tripBalance, setTripBalance] = useState<string>('0');
   const [amount, setAmount] = useState<string>('0');
 
@@ -37,8 +25,8 @@ export const TransferBalance = () => {
     if (!amount) {
       alert('Please fill out all fields');
     } else {
-      if (tripID) {
-        const trip = await axios.get(`api/trip/${tripID}`);
+      if (tripId) {
+        const trip = await axios.get(`api/trip/${tripId}`);
         const user = await axios.get(`api/user/${userId}`);
         const newBalance = parseInt(trip.data[0].balance) + parseInt(amount);
         const transaction = {
@@ -55,9 +43,6 @@ export const TransferBalance = () => {
         });
         await axios.put(`api/user/${user.data[0]._id}`, {
           currentMoney: parseInt(user.data[0].currentMoney) - parseInt(amount),
-          transasctions: user.data[0].transasctions
-            ? [...user.data[0].transasctions, transaction]
-            : [transaction],
         });
         setTripBalance(
           `${parseInt(user.data[0].currentMoney) - parseInt(amount)}`
@@ -70,7 +55,7 @@ export const TransferBalance = () => {
   return (
     <div>
       <div className="header">
-        <Link to={`/trip?groupId=${onlyGid}&tripID=${tripID}`}>
+        <Link to="/edittrip">
           <img src={backbutton} alt="back" className="backButton" />
         </Link>
         <h1 className="headerText">Transfer balance</h1>

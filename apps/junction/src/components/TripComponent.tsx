@@ -21,7 +21,7 @@ export const TripComponent = ({
   tripId,
 }: TripComponentProps) => {
   const redirectClick = () => {
-    window.location.href = `/trip?groupId=${groupId}&tripID=${tripId}`;
+    window.location.href = `/trip?tripID=${tripId}`;
   };
 
   return (
@@ -36,8 +36,9 @@ export const TripComponent = ({
           <p className="trimcomponentPrice">{pooled} EUR pooled</p>
         </div>
       </div>
-
-      <img src={rightarrow} alt="right" className="rightArrow" />
+      <Link to={`/edittrip?groupId=${groupId}&tripId=${tripId}`}>
+        <img src={rightarrow} alt="right" className="rightArrow" />
+      </Link>
     </div>
   );
 };

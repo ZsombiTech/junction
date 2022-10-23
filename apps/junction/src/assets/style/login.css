@@ -68,9 +68,6 @@ input:focus {
   margin-left: 2rem;
   margin-right: 2rem;
 }
-.loginbluebtn:hover {
-  background: rgba(188, 206, 244, 0.5);
-}
 
 .loginbtncontainer {
   margin-top: 2rem;

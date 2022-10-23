@@ -7,8 +7,8 @@ export const StatMember = (props: any) => {
   return (
     <div className="stat">
       <p className="member-name">{props.name}</p>
-      <p className="money plus">+{props.pozVal}</p>
-      <p className="money minus">-{props.negVal}</p>
+      <p className="money plus">{props.pozVal}</p>
+      <p className="money minus">{props.negVal}</p>
     </div>
   );
 };

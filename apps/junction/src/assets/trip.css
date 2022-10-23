@@ -1,140 +1,131 @@
 .trip-manage-wrapper {
-  width: 100%;
-  height: fit-content;
+    width: 100%;
+    height: fit-content;
 }
 
 .balance-stats-wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
 }
 
-.balance,
-.spent {
-  background-color: white;
-  flex: 1;
-  border-radius: 10px;
-  padding: 7px;
-  margin-bottom: 10px;
+.balance, .spent {
+    background-color: white;
+    flex: 1;
+    border-radius: 10px;
+    padding: 7px;
+    margin-bottom: 10px;
 }
 
-.balance h4,
-.spent h4 {
-  font-size: 24px;
-  padding: 5px 0 0 5px;
-  font-weight: 500;
+.balance h4, .spent h4 {
+    font-size: 24px;
+    padding: 5px 0 0 5px;
+    font-weight: 500;
 }
 
-.balance .amount,
-.spent .amount {
-  padding: 0 0 5px 5px;
-  font-size: 22px;
-  font-weight: 500;
-  color: #5282e0;
+.balance .amount, .spent .amount {
+    padding: 0 0 5px 5px;
+    font-size: 22px;
+    font-weight: 500;
+    color: #5282E0;
 }
 
-.balance .currency,
-.spent .currency {
-  font-size: 18px;
-  font-weight: 400;
-  color: #5282e0;
+.balance .currency, .spent .currency {
+    font-size: 18px;
+    font-weight: 400;
+    color: #5282E0;
 }
 
-.balance,
-.stats {
-  margin: 0 7px 10px 15px;
+.balance, .stats {
+    margin: 0 7px 10px 15px;
 }
 
-.spent,
-.edit-trip {
-  margin: 0 15px 10px 7px;
+.spent, .edit-trip {
+    margin: 0 15px 10px 7px;
 }
 
-.stats,
-.edit-trip {
-  background-color: #5282e050;
-  flex: 1;
-  border-radius: 10px;
-  padding: 7px;
-  text-align: center;
-  color: white;
+.stats, .edit-trip {
+    background-color: #5282E050;
+    flex: 1;
+    border-radius: 10px;
+    padding: 7px;
+    text-align: center;
+    color: white;
 }
 
-.stats h4,
-.edit-trip h4 {
-  font-size: 18px;
-  padding: 5px 0 5px 0;
-  font-weight: 400;
+.stats h4, .edit-trip h4 {
+    font-size: 18px;
+    padding: 5px 0 5px 0;
+    font-weight: 400;
 }
 
 .transactions-wrapper {
-  width: 100%;
-  height: fit-content;
-  margin-top: 20px;
+    width: 100%;
+    height: fit-content;
+    margin-top: 20px;
 }
 
 .transactions-wrapper h4 {
-  font-size: 28px;
-  padding: 5px 0 0 10px;
-  font-weight: 500;
-  color: white;
+    font-size: 28px;
+    padding: 5px 0 0 10px;
+    font-weight: 500;
+    color: white;
 }
 
 .transaction {
-  background-color: white;
-  border-radius: 10px;
-  padding: 14px;
-  margin: 10px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 14px;
+    margin: 10px;
+
 }
 
 .transaction .transaction-name {
-  font-size: 24px;
-  font-weight: 400;
+    font-size: 24px;
+    font-weight: 400;
 }
 
 .transaction .transaction-maker {
-  font-size: 14px;
-  font-weight: 400;
-  color: #8f96a3;
+    font-size: 14px;
+    font-weight: 400;
+    color: #8F96A3;
 }
 
 .transaction .transaction-amount {
-  font-size: 24px;
-  font-weight: 500;
-  color: #cf1717;
-  margin-right: 0.2rem;
+    font-size: 24px;
+    font-weight: 500;
+    color: #CF1717;
 }
 
 .transaction .transaction-currency {
-  position: relative;
-  font-size: 20px;
-  font-weight: 400;
-  color: #cf1717;
-  justify-self: flex-end;
+    position: relative;
+    font-size: 20px;
+    font-weight: 400;
+    color: #CF1717;
+    justify-self: flex-end;
 }
 
 .transaction .transaction-date {
-  font-size: 14px;
-  font-weight: 400;
-  color: #8f96a3;
+    font-size: 14px;
+    font-weight: 400;
+    color: #8F96A3;
 }
 
 .transaction p {
-  width: fit-content;
-  display: inline-block;
-  flex: 1;
+    width: fit-content;
+    display: inline-block;
+    flex: 1;
 }
 
-.transaction-left,
-.transaction-right {
-  display: flex;
-  align-items: center;
-  width: 100%;
+.transaction-left, .transaction-right {
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 .transaction .right {
-  text-align: end;
+    text-align: end;
 }

@@ -15,6 +15,7 @@ class GroupController {
 exports["default"] = GroupController;
 _a = GroupController;
 GroupController.getGroupsByUserId = (req, res, next) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
+    console.log("csumi");
     try {
         const groups = yield group_1.default.find({
             members: {

@@ -7,14 +7,13 @@ import Navbar from '../components/Navbar';
 import Login from '../pages/Login';
 import Trip from '../pages/Trip';
 import Home from '../pages/Home';
+import Friends from '../pages/Friends';
 import EditGroup from '../pages/EditGroup';
 import AddGroup from '../pages/AddGroup';
 import EditTrip from '../pages/EditTrip';
 import AddTrip from '../pages/AddTrip';
 import TransferBalance from '../pages/TransferBalance';
 import Stats from '../pages/Stats';
-import Friends from '../pages/Friends';
-import Main from '../pages/Main';
 
 export const App = () => {
   useEffect(() => {
@@ -30,10 +29,6 @@ export const App = () => {
           </Route>
           <Route path="/friends">
             <Friends />
-            <Navbar />
-          </Route>
-          <Route path="/main">
-            <Main />
             <Navbar />
           </Route>
           <Route path="/editgroup">
